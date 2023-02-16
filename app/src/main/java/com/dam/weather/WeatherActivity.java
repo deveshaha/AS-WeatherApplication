@@ -42,11 +42,11 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     private void getWeatherData(){
-//        Double lat = getIntent().getDoubleExtra("lat", 0);
-//        Double lon = getIntent().getDoubleExtra("lon", 0);
+        Double lat = getIntent().getDoubleExtra("lat", 0);
+        Double lon = getIntent().getDoubleExtra("lon", 0);
 
-        Double lat = 40.5;
-        Double lon  = -3.7;
+//        Double lat = 40.5;
+//        Double lon  = -3.7;
         Retrofit r = RetrofitClient.getClient(ApiRestService.BASE_URL);
         ApiRestService ars = r.create(ApiRestService.class);
         Call<WeatherRes> call = ars.getWeather(API_KEY, lat, lon);
