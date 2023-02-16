@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WeatherAct</string>
+    <string name="etLatitudf">Latitud</string>
+    <string name="etLongitud">Longitud</string>
+    <string name="btnConsultar">Consultar Tiempo</string>
+    <string name="tvTitulo">The Weather App</string>
+    <string name="tvRegion">Region</string>
+    <string name="tvHour">00:00 AM/PM</string>
+    <string name="tvTemp">0º</string>
+    <string name="tvHumidity">HUMEDAD</string>
+    <string name="tvWind">LLUVIA</string>
+    <string name="tvDescription">Weather Description</string>
+    <string name="tvHumidityValue">0%</string>
+    <string name="tvRainValue">0%</string>
+</resources>
