@@ -27,19 +27,21 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Double latitud = Double.parseDouble(etLat.getText().toString());
-                Double longitud = Double.parseDouble(etLon.getText().toString());
                 if (etLat.getText().toString().isEmpty() || etLon.getText().toString().isEmpty()) {
                     Snackbar.make(etLat, "Introduce los datos", Snackbar.LENGTH_LONG).show();
-                } else if (latitud < -90 || latitud > 90){
-                    Snackbar.make(etLat, "Latitud no válida", Snackbar.LENGTH_LONG).show();
-                } else if(longitud < -180 || longitud > 180){
-                    Snackbar.make(etLon, "Longitud no válida", Snackbar.LENGTH_LONG).show();
                 } else {
-                    Intent i = new Intent(MainActivity.this, WeatherActivity.class);
-                    i.putExtra("Latitud", latitud);
-                    i.putExtra("Longitud", longitud);
-                    startActivity(i);
+                    Double latitud = Double.parseDouble(etLat.getText().toString());
+                    Double longitud = Double.parseDouble(etLon.getText().toString());
+                    if (latitud < -90 || latitud > 90){
+                        Snackbar.make(etLat, "Latitud no válida", Snackbar.LENGTH_LONG).show();
+                    } else if(longitud < -180 || longitud > 180){
+                        Snackbar.make(etLon, "Longitud no válida", Snackbar.LENGTH_LONG).show();
+                    } else {
+                        Intent i = new Intent(MainActivity.this, WeatherActivity.class);
+                        i.putExtra("Latitud", latitud);
+                        i.putExtra("Longitud", longitud);
+                        startActivity(i);
+                    }
                 }
             }
         });

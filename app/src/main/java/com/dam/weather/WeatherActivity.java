@@ -42,8 +42,8 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     private void getWeatherData(){
-        Double lat = getIntent().getDoubleExtra("lat", 0);
-        Double lon = getIntent().getDoubleExtra("lon", 0);
+        Double lat = getIntent().getDoubleExtra("Latitud", 0);
+        Double lon = getIntent().getDoubleExtra("Longitud", 0);
 
 //        Double lat = 40.5;
 //        Double lon  = -3.7;
@@ -95,6 +95,10 @@ public class WeatherActivity extends AppCompatActivity {
                             break;
                         case "Cloudy Night":
                             ivWeather.setImageResource(R.drawable.cloudy_night);
+                            break;
+
+                        default:
+                            ivWeather.setImageResource(R.drawable.clear_day);
                             break;
                     }
                 }
